@@ -27,9 +27,8 @@ public class Product implements Serializable {
     private String name;
     private Double price;
 
-    @Column(name = "crate_at")
     @Temporal(TemporalType.DATE)
-    private Date crateAt;
+    private Date created;
 
     /**
      * Gets id.
@@ -59,12 +58,12 @@ public class Product implements Serializable {
     }
 
     /**
-     * Gets crate at.
+     * Gets crated.
      *
-     * @return the crate at
+     * @return the crated
      */
-    public Date getCrateAt() {
-        return crateAt;
+    public Date getCreated() {
+        return created;
     }
 
     /**
@@ -95,11 +94,11 @@ public class Product implements Serializable {
     }
 
     /**
-     * Sets crate at.
+     * Sets crated.
      *
-     * @param crateAt the crate at
+     * @param created the crated
      */
-    public void setCrateAt(Date crateAt) {
-        this.crateAt = crateAt;
+    public void setCrateAt(Date created) {
+        this.created = created;
     }
 }
