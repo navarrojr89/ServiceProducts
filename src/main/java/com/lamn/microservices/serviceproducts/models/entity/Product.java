@@ -1,6 +1,5 @@
 package com.lamn.microservices.serviceproducts.models.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -58,9 +57,9 @@ public class Product implements Serializable {
     }
 
     /**
-     * Gets crated.
+     * Gets created.
      *
-     * @return the crated
+     * @return the created
      */
     public Date getCreated() {
         return created;
@@ -93,12 +92,13 @@ public class Product implements Serializable {
         this.price = price;
     }
 
+
     /**
-     * Sets crated.
+     * Sets created.
      *
-     * @param created the crated
+     * @param created the created
      */
-    public void setCrateAt(Date created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 }
