@@ -2,9 +2,8 @@ package com.lamn.microservices.serviceproducts.controllers;
 
 import com.lamn.microservices.serviceproducts.models.entity.Product;
 import com.lamn.microservices.serviceproducts.models.service.ProductService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,28 +15,24 @@ import java.util.stream.Collectors;
 public class ProductController {
 
     @Autowired
-    private Environment environment;
-    @Autowired
     private ProductService productService;
+
+    @Value("${server.port}")
+    private Integer port;
 
     @GetMapping("/products")
     public List<Product> getAllProducts() {
-        String port = environment.getProperty("local.server.port");
-        if (StringUtils.isNotEmpty(port)) {
-            return productService.findAll()
-                    .stream()
-                    .peek(product -> product.setPort(Integer.parseInt(port)))
-                    .collect(Collectors.toList());
-        }
-        return productService.findAll();
+        return productService.findAll()
+                .stream()
+                .peek(product -> product.setPort(port))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/products/{id}")
     public Product getProduct(@PathVariable Long id) {
         Product product = productService.findById(id);
-        String port = environment.getProperty("local.server.port");
-        if (product != null && StringUtils.isNotEmpty(port)) {
-            product.setPort(Integer.parseInt(port));
+        if (product != null) {
+            product.setPort(port);
         }
 
         return product;
