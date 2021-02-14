@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * The type Product controller.
+ */
 @RestController
 public class ProductController {
 
@@ -20,6 +23,11 @@ public class ProductController {
     @Value("${server.port}")
     private Integer port;
 
+    /**
+     * Gets all products.
+     *
+     * @return the all products
+     */
     @GetMapping("/products")
     public List<Product> getAllProducts() {
         return productService.findAll()
@@ -28,6 +36,12 @@ public class ProductController {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Gets product.
+     *
+     * @param id the id
+     * @return the product
+     */
     @GetMapping("/products/{id}")
     public Product getProduct(@PathVariable Long id) {
         Product product = productService.findById(id);
