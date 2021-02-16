@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -29,9 +28,6 @@ public class Product implements Serializable {
 
     @Temporal(TemporalType.DATE)
     private Date created;
-
-    @Transient
-    private Integer port;
 
     /**
      * Gets id.
@@ -70,15 +66,6 @@ public class Product implements Serializable {
     }
 
     /**
-     * Gets port.
-     *
-     * @return the port
-     */
-    public Integer getPort() {
-        return port;
-    }
-
-    /**
      * Sets id.
      *
      * @param id the id
@@ -113,14 +100,5 @@ public class Product implements Serializable {
      */
     public void setCreated(Date created) {
         this.created = created;
-    }
-
-    /**
-     * Sets port.
-     *
-     * @param port the port
-     */
-    public void setPort(Integer port) {
-        this.port = port;
     }
 }
