@@ -2,6 +2,7 @@ package com.lamn.microservices.serviceproducts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @EnableEurekaClient
 @SpringBootApplication
+@EntityScan({"com.lamn.microservices.appcommons.models.entity"})
 public class ServiceProductsApplication {
 
     /**

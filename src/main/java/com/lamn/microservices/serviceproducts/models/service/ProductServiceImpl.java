@@ -1,6 +1,6 @@
 package com.lamn.microservices.serviceproducts.models.service;
 
-import com.lamn.microservices.serviceproducts.models.entity.Product;
+import com.lamn.microservices.appcommons.models.entity.Product;
 import com.lamn.microservices.serviceproducts.models.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

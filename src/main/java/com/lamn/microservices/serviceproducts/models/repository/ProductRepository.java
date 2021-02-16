@@ -1,6 +1,6 @@
 package com.lamn.microservices.serviceproducts.models.repository;
 
-import com.lamn.microservices.serviceproducts.models.entity.Product;
+import com.lamn.microservices.appcommons.models.entity.Product;
 import org.springframework.data.repository.CrudRepository;
 
 /**
