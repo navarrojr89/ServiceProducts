@@ -24,4 +24,19 @@ public interface ProductService {
      */
     Product findById(Long id);
 
+    /**
+     * Save product.
+     *
+     * @param product the product
+     * @return the product
+     */
+    Product save(Product product);
+
+    /**
+     * Delete by id.
+     *
+     * @param id the id
+     */
+    void deleteById(Long id);
+
 }
