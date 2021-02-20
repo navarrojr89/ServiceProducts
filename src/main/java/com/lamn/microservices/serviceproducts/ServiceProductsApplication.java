@@ -9,8 +9,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * The type Service products application.
  */
 @EnableEurekaClient
-@SpringBootApplication
 @EntityScan({"com.lamn.microservices.appcommons.models.entity"})
+@SpringBootApplication
 public class ServiceProductsApplication {
 
     /**
